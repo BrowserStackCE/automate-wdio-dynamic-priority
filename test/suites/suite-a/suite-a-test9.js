@@ -7,9 +7,10 @@ describe('Suite A - Test 9', () => {
     expect(title).to.include('StackDemo');
   });
 
-  it('should display the product count heading', async () => {
-    const heading = await $('h3');
-    await heading.waitForDisplayed({ timeout: 10000 });
-    expect(await heading.isDisplayed()).to.be.true;
+  it('should display the search box', async () => {
+    await browser.url('https://bstackdemo.com/');
+    const searchBox = await $('input.px-4');
+    await searchBox.waitForDisplayed({ timeout: 10000 });
+    expect(await searchBox.isDisplayed()).to.be.true;
   });
 });

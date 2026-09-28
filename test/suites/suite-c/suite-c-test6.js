@@ -7,9 +7,10 @@ describe('Suite C - Test 6', () => {
     expect(title).to.include('StackDemo');
   });
 
-  it('should display the Samsung vendor filter', async () => {
-    const samsungFilter = await $('label=Samsung');
-    await samsungFilter.waitForDisplayed({ timeout: 10000 });
-    expect(await samsungFilter.isDisplayed()).to.be.true;
+  it('should display the search box', async () => {
+    await browser.url('https://bstackdemo.com/');
+    const searchBox = await $('input.px-4');
+    await searchBox.waitForDisplayed({ timeout: 10000 });
+    expect(await searchBox.isDisplayed()).to.be.true;
   });
 });

@@ -8,6 +8,7 @@ describe('Suite A - Test 1', () => {
   });
 
   it('should display the search box', async () => {
+    await browser.url('https://bstackdemo.com/');
     const searchBox = await $('input.px-4');
     await searchBox.waitForDisplayed({ timeout: 10000 });
     expect(await searchBox.isDisplayed()).to.be.true;
